@@ -1,0 +1,44 @@
+page {
+    background-color: #dedede;
+    padding: 20rpx;
+}
+
+.search_row {
+    height: 60rpx;
+    display: flex;
+    input {
+        flex: 6;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 15rpx;
+        padding-left: 20rpx;
+    }
+    button {
+        flex: 1;
+        padding: 0; 
+        height: 100%;
+        margin-left: 10rpx!important;
+        border-radius: 15rpx;
+        font-size: 26rpx;
+        font-weight: normal;
+        text-align: center;
+        line-height: 60rpx;
+    };
+}
+
+.search_content {
+    margin-top: 25rpx;
+    .search_item {
+        border-radius: 15rpx;
+        background-color: #fff;
+        font-size: 26rpx;
+        padding: 15rpx 10rpx;
+        border-bottom: 1rpx solid #ccc;
+
+        overflow: hidden;
+        // 不换行
+        white-space: nowrap;
+        // ...
+        text-overflow: ellipsis;
+    }
+}

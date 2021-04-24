@@ -1,0 +1,1 @@
+<button bindgetuserinfo="handleGetuserinfo" open-type="getUserInfo" plain="{{true}}" type="primary">登录</button>

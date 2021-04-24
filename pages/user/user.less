@@ -1,0 +1,163 @@
+page {
+    background-color: #edece8;
+}
+
+.user_info_wrap {
+    height: 45vh;
+    overflow: hidden;
+    background-color: var(--themeColor);
+    position: relative;
+
+    .user_img_wrap {
+        position: relative;
+
+        .user_bg {
+            height: 50vh;
+            // 高斯模糊
+            filter: blur(8rpx);
+        }
+
+        .user_info {
+            position: absolute;
+            left: 50%;
+            // 以中轴向左平移50%
+            transform: translateX(-50%);
+            top: 20%;
+            text-align: center;
+
+            .user_icon {
+                width: 150rpx;
+                height: 150rpx;
+                border-radius: 50%;
+
+            }
+
+            .user_name {
+                color: #fff;
+                margin-top: 40rpx;
+            }
+        }
+    }
+
+    .user_btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 30%;
+        background-color: #55df67;
+        color: #fff;
+        border-radius: 30rpx;
+        padding: 30rpx 50rpx;
+        font-size: 36rpx;
+    }
+}
+
+.user_content {
+    position: relative;
+
+    .user_main {
+        color: #555;
+        // 加底部距离
+        padding-bottom: 100rpx;
+        position: absolute;
+        width: 90%;
+        left: 50%;
+        top: -40rpx;
+        font-size: 23rpx;
+        transform: translateX(-50%);
+
+        .hidtory_wrap {
+            background-color: #fff;
+            display: flex;
+            border-radius: 15rpx;
+
+            navigator {
+                flex: 1;
+                text-align: center;
+                padding: 10rpx 0;
+
+                .his_num {
+                    color: var(--themeColor);
+                }
+
+                .his_name {}
+            }
+        }
+
+        .orders_wrap {
+            background-color: #fff;
+            margin-top: 30rpx;
+            border-radius: 15rpx;
+
+            .orders_title {
+                padding: 20rpx;
+                border-bottom: 1rpx solid #ccc;
+            }
+
+            .orders_content {
+                display: flex;
+
+                navigator {
+                    flex: 1;
+                    padding: 15rpx 0;
+                    text-align: center;
+
+                    .iconfont {
+                        color: var(--themeColor);
+                        font-size: 40rpx;
+                    }
+
+                    .order_name {}
+                }
+            }
+        }
+
+
+        .address_wrap {
+            margin-top: 30rpx;
+            background-color: #fff;
+            padding: 20rpx;
+            border-radius: 15rpx;
+
+        }
+
+        .app_info_wrap {
+            margin-top: 30rpx;
+            background-color: #fff;
+            border-radius: 15rpx;
+
+            .app_info_item {
+                border-bottom: 1rpx solid #ccc;
+                padding: 20rpx;
+                border-radius: 15rpx;
+
+                text {}
+            }
+
+            .app_info_contact {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+
+        .recommend_wrap {
+            margin-top: 30rpx;
+            background-color: #fff;
+            padding: 20rpx;
+            border-radius: 15rpx;
+            position: relative;
+
+            button {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                // 透明度
+                opacity: 0;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,41 @@
+<view class="pyg_index">
+    <!-- 搜索框组件 -->
+    <SearchInput></SearchInput>
+    <!-- 内容 -->
+    <scroll-view scroll-y class="index_content">
+        <!-- 轮播图组件 -->
+        <view class="index_swiper">
+            <!-- 1   swiper已经存在默认宽高 100% *150px
+            2   image默认宽高 320*240
+            3   两者都要重新改大小 -->
+            <swiper autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}" indicator-active-color="#eb4450">
+                <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+                    <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}">
+                        <image src="{{item.image_src}}" mode="widthFix"></image>
+                    </navigator>
+                </swiper-item>
+            </swiper>
+        </view>
+        <!-- 分类导航组件 -->
+        <view class="index_cate">
+            <navigator wx:for="{{catesList}}" wx:key="name" url="/pages/category/category" open-type="switchTab">
+                <image mode="widthFix" src="{{item.image_src}}" />
+            </navigator>
+        </view>
+        <!-- 楼层组件 -->
+        <view class="index_floor">
+            <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
+                <!-- 标题 -->
+                <view class="floor_title">
+                    <image src="{{item1.floor_title.image_src}}" mode="widthFix" />
+                </view>
+                <!-- 内容 -->
+                <view class="floor_list">
+                    <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="product_list" url="/pages/goods_list/goods_list?query=小米">
+                        <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}"></image>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

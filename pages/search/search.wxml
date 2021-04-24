@@ -1,0 +1,10 @@
+<view class="search_row">
+    <input value="{{inpValue}}" placeholder="请输入您要搜索的商品" bindinput="handleInput"></input>
+    <button bindtap="handleCancel" hidden="{{!isFocus}}">取消</button>
+</view>
+<view class="search_content">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{item.goods_id}}" class="search_item" wx:for="{{foundGoods}}" wx:key="goods_id">
+        <!-- lorem 临时填充文字 -->
+        {{item.goods_name}}
+    </navigator>
+</view>

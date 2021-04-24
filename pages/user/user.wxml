@@ -1,0 +1,105 @@
+<view class="user_info_wrap">
+    <!-- 登录就显示用户信息 -->
+    <view wx:if="{{userInfo.avatarUrl}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userInfo.avatarUrl}}"></image>
+        <view class="user_info">
+            <image class="user_icon" src="{{userInfo.avatarUrl}}"></image>
+            <view class="user_name">{{userInfo.nickName}}</view>
+        </view>
+    </view>
+    <!-- 不登录显示登录按钮 -->
+    <view wx:else class="user_btn">
+        <navigator url="/pages/login/login">登录</navigator>
+    </view>
+</view>
+<view class="user_content">
+    <view class="user_main">
+        <!-- 历史足迹 -->
+        <view class="hidtory_wrap">
+            <navigator url="#" bindtap="showWaiting">
+                <view class="his_num">--</view>
+                <view class="his_name">收藏的店铺</view>
+            </navigator>
+            <block wx:if="{{userInfo.avatarUrl}}">
+                <navigator url="/pages/collect/collect">
+                    <view class="his_num">{{collectNum}}</view>
+                    <view class="his_name">收藏的商品</view>
+                </navigator>
+            </block>
+            <block wx:else>
+                <navigator url="#" bindtap="suggestLogin">
+                    <view class="his_num">--</view>
+                    <view class="his_name">收藏的商品</view>
+                </navigator>
+            </block>
+            <navigator url="#" bindtap="showWaiting">
+                <view class="his_num">--</view>
+                <view class="his_name">关注的商品</view>
+            </navigator>
+            <navigator url="#" bindtap="showWaiting">
+                <view class="his_num">--</view>
+                <view class="his_name">我的足迹</view>
+            </navigator>
+        </view>
+        <!-- 我的订单 -->
+        <view class="orders_wrap">
+            <view class="orders_title">我的订单</view>
+            <view class="orders_content">
+                <block wx:if="{{userInfo.avatarUrl}}">
+                    <navigator url="/pages/order/order?type=1">
+                        <view class="iconfont icon-quanbudingdan"></view>
+                        <view class="order_name">全部订单</view>
+                    </navigator>
+                    <navigator url="/pages/order/order?type=2">
+                        <view class="iconfont icon-daifukuan"></view>
+                        <view class="order_name">待付款</view>
+                    </navigator>
+                    <navigator url="/pages/order/order?type=3">
+                        <view class="iconfont icon-daishouhuo"></view>
+                        <view class="order_name">待收货</view>
+                    </navigator>
+                </block>
+                <block wx:else>
+                    <navigator url="#" bindtap="suggestLogin">
+                        <view class="iconfont icon-quanbudingdan"></view>
+                        <view class="order_name">全部订单</view>
+                    </navigator>
+                    <navigator url="#" bindtap="suggestLogin">
+                        <view class="iconfont icon-daifukuan"></view>
+                        <view class="order_name">待付款</view>
+                    </navigator>
+                    <navigator url="#" bindtap="suggestLogin">
+                        <view class="iconfont icon-daishouhuo"></view>
+                        <view class="order_name">待收货</view>
+                    </navigator>
+                </block>
+                <navigator url="#" bindtap="showWaiting">
+                    <view class="iconfont icon-tuikuantuihuo"></view>
+                    <view class="order_name">退款/退货</view>
+                </navigator>
+            </view>
+        </view>
+        <!-- 收货地址管理 -->
+        <navigator class="address_wrap" bindtap="showWaiting">
+            收货地址管理
+        </navigator>
+        <!-- 应用信息相关 -->
+        <view class="app_info_wrap">
+            <view class="app_info_item app_info_contact">
+                <text>联系客服</text>
+                <text >400-618-4000</text>
+            </view>
+            <navigator url="/pages/feedback/feedback" class="app_info_item">
+                意见反馈
+            </navigator>
+            <navigator class="app_info_item" bindtap="showWaiting">
+                关于我们
+            </navigator>
+        </view>
+        <!-- 应用分享 -->
+        <navigator url="#" class="recommend_wrap">
+            把这个应用推荐给其他人
+            <button open-type="share"></button>
+        </navigator>
+    </view>
+</view>
